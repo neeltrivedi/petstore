@@ -1,0 +1,38 @@
+<div class="container">
+<div class="row">
+	<div class="input-group" id="searchBoxes">
+		  
+		  <div class="col-lg-3">
+			  <label for="basic-url">Global</label>
+			  <input type="text" class="form-control" placeholder="Search" ng-model="globalSearch.$" aria-describedby="basic-addon1">
+		  </div>
+		  <div class="col-lg-3">
+			  <label for="basic-url">Id</label>
+			  <input type="text" class="form-control" placeholder="Search" ng-model="globalSearch.id" aria-describedby="basic-addon1">
+		  </div>
+		  <div class="col-lg-3">
+			  <label for="basic-url">Name</label>
+			  <input type="text" class="form-control" placeholder="Search" ng-model="globalSearch.name" aria-describedby="basic-addon1">
+		  </div>
+		  <div class="col-lg-3">
+			  <label for="basic-url">Status</label>
+			  <input type="text" class="form-control" placeholder="Search" ng-model="globalSearch.status" aria-describedby="basic-addon1">
+		  </div>			
+	</div>
+</div>
+	
+<br/>
+<div class="row">
+  <div class="col-sm-6 col-md-4" ng-repeat="pet in vm.pets | filter:globalSearch">
+    <div class="thumbnail">
+      <img ng-src="{{pet.photoUrl}}" height="20" alt="Description" />
+      <div class="caption">
+        <h3>{{pet.id}}: {{pet.name}}</h3>
+        <p>{{pet.status}}</p>
+        <p><button ng-if="role == 'admin'" class="btn btn-danger" ng-click="vm.deletePet(pet.id)">Delete</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>	

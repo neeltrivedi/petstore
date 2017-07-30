@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Pet Store</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="../static/bootstrap.css" th:href="@{/bootstrap.css}"/>
+<link rel="stylesheet" href="../static/login.css" th:href="@{/login.css}"/>
+
+</head>
+<body ng-app='restApp'>
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">Pet Store App</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+            	<li><a ng-if="role == 'admin'" href="#/addpet">Add Pet</a></li>
+ 				<li><a ng-if="permission != null" href="#/viewpets">View Pets</a></li>
+ 				<li><a ng-if="permission != null" href="#/searchpet">Search Pet</a></li>
+ 				<li>
+ 				<form>
+        		<button ng-if="permission != null" type="submit" class="btn btn-xs" ng-controller="LoginController" ng-click="logout()" ng-style="{'margin-top': '14px','margin-right': '10px'}">Logout</button>
+        		</form>
+        		</li>
+             </ul>	
+        	
+        </div>
+    </nav>
+</header>
+
+<div ng-view=""></div>
+	<!-- load angular via CDN -->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.min.js"></script>
+	
+	<script src="app/app.js"></script>
+	<script src="app/routes.js"></script>
+	<script src="app/controllers.js"></script>
+	
+	
+
+</body>
+</html>

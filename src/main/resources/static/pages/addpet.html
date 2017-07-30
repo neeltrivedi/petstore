@@ -1,0 +1,24 @@
+<form>
+<div class="container">
+<div class="row">
+	<div class="input-group" id="searchBoxes">
+		  <label for="basic-url">Name</label>
+		  <input type="text" class="form-control" data-ng-model="vm.pets.name" placeholder="Name of your pet" aria-describedby="basic-addon1">
+		  <br/>
+		  
+		  <label for="basic-url">PhotoUrl</label>
+		  <input type="text" class="form-control" data-ng-model="vm.pets.photoUrl" placeholder="https://i.ytimg.com/vi.jpg" aria-describedby="basic-addon1">
+		  <br/>
+		  
+		  <label for="basic-url">Status</label>
+		  <input type="text" class="form-control" data-ng-model="vm.pets.status" placeholder="available" aria-describedby="basic-addon1">
+		  <br/>
+	</div><br/>
+	
+	<div class="form-group">
+          <button type="submit" class="btn btn-primary" data-ng-click="vm.addPet(vm.pets)">Save</button>
+          <button type="button" class="btn btn-default" data-ng-click="">Cancel</button>
+    </div>
+</div> 
+</div>    
+</form>       

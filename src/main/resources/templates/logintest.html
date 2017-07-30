@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Pet Store</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="../static/bootstrap.css" th:href="@{/bootstrap.css}"/>
+<link rel="stylesheet" href="../static/login.css" th:href="@{/login.css}"/>
+
+</head>
+<body ng-app='restApp'>
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/">Pet Store App</a>
+            </div>
+            
+            <p class="navbar-text navbar-right" th:text="'Signed in as ' + ${username}" style="margin-right: 10px;">Signed in as Anonymus</p>
+        </div>
+    </nav>
+</header>
+
+  <div class="wrapper">
+    <form class="form-signin" action="/" id="myLogin">       
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" ng-model="username" id="username" placeholder="Username" required="" autofocus="" />
+      <input type="password" class="form-control" ng-model="password" id="password" placeholder="Password" required=""/>      
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" ng-click="submit()" type="submit">Login</button>   
+    </form>
+  </div>
+	<!-- load angular via CDN -->
+	<script src="//code.angularjs.org/1.3.0-rc.2/angular.min.js"></script>
+	<script src="//code.angularjs.org/1.3.0-rc.2/angular-route.min.js"></script>
+	<script src="//code.angularjs.org/1.3.0-rc.2/angular-resource.min.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/routes.js"></script>
+	<script src="app/controllers.js"></script>
+	
+
+</body>
+</html>

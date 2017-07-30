@@ -1,0 +1,31 @@
+<form>
+<div class="container">
+<div class="row"> 
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" data-ng-model="id" placeholder="Search pet by Id...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit" data-ng-click="vm.getOne(id)">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+</form>
+<br/>
+<div ng-show="pet">
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img ng-src="{{pet.photoUrl}}" height="20" alt="Description" />
+      <div class="caption">
+        <h3>{{pet.name}}</h3>
+        <p>{{pet.status}}</p>
+        <p><button ng-if="role == 'admin'" class="btn btn-danger" ng-click="vm.deletePet(pet.id)">Delete</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
